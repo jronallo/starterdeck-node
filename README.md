@@ -10,6 +10,8 @@ When the node server is running the HTML slides and audience handout are synced 
 
 When guard is running the derivatives are automatically built when something changes. Browser pages are also reloaded using livereload.
 
+The slides are self-contained, meaning that all images, CSS, JavaScript, videos, and other external assets are included in the markup as data: URIs.
+
 ## About
 
 You can read more about this approach to creating slideshows here:
@@ -57,17 +59,17 @@ Visit <http://localhost:3003/theindexpage.html>
 wget --directory-prefix ~/.pandoc/dzslides https://raw.githubusercontent.com/paulrouget/dzslides/master/template.html
 ```
 
-See the addition to the first comment here: <https://github.com/paulrouget/dzslides/issues/52>
+See the addition to the first comment here for more information on this: <https://github.com/paulrouget/dzslides/issues/52>
 
 ## Customization
 
-Edit assets/_custom.css.scss using the SCSS syntax.
+Edit assets/stylesheets/_custom.css.scss using the SCSS syntax.
 
-Edit assets/custom.js to add custom JavaScript.
+Edit assets/javascripts/custom.js to add custom JavaScript.
 
 ## Sass
 
-This project uses Sass and provides some mixins for some common slide styles. You can see them in assets/_starterdeck.css.scss
+This project uses Sass and provides some mixins for some common slide styles. You can see them in assets/stylesheets/_starterdeck.css.scss
 
 ## Presenter Mode
 
