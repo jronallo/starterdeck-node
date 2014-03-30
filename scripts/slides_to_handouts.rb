@@ -13,7 +13,10 @@ File.open('slides/handouts.md', 'w') do |fh|
     id = section.attr(:id)
     h1 = section.xpath('h1').text()
     fh.puts "# #{h1} {##{id}}\n"
-    fh.puts section.xpath('div[@class="handout"]').children
+
+    handout = section.xpath('div[@class="handout"]').children.to_html
+
+    fh.puts handout
     fh.puts "\n"
   end
 end

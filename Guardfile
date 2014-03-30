@@ -10,6 +10,8 @@ guard :shell do
   watch('slides/assets/stylesheets/slides-singlepage.css') {puts `./scripts/markdown_to_slides.sh`}
   watch(%r{slides/assets/javascripts/.*.js})             {puts `./scripts/markdown_to_slides.sh`}
   watch('scripts/markdown_to_slides.sh')          {puts `./scripts/markdown_to_slides.sh`}
+  watch('scripts/slides_to_handouts.rb') {puts `./scripts/markdown_to_slides.sh`}
+
   watch(%r{templates/.*})                                {puts `./scripts/markdown_to_slides.sh`}
 
   watch('slides/slides.md')                               {puts `./scripts/markdown_to_slides.sh`}

@@ -3,3 +3,9 @@
 #takahashi {
   @include takahashi;
 }
+
+#internet-archive {
+	h1 {
+		display: none;
+	}
+}

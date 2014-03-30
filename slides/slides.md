@@ -16,6 +16,13 @@ Slides: <https://ronallo.com/presentations/>
 
 # Takahashi
 
+# Internet Archive {#internet-archive}
+
+![](slides/assets/images/internet-archive-600x.png)\ 
+
+<div class="handout">
+  <img src="slides/assets/images/internet-archive-240x.png" alt="">
+</div>
 
 # Jason Ronallo
 
