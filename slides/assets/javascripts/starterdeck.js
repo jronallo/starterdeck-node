@@ -7,6 +7,12 @@ function presentation_keypress_check(aEvent){
     for (var i=0; i < notes.length; i++){
       notes[i].style.display = (notes[i].style.display == 'none' || !notes[i].style.display) ? 'block' : 'none';
     }
+  } else if ( aEvent.keyCode == 97) {
+    aEvent.preventDefault();
+    var handouts = document.getElementsByClassName('handout');
+    for (var i=0; i < handouts.length; i++){
+      handouts[i].style.display = (handouts[i].style.display == 'none' || !handouts[i].style.display) ? 'block' : 'none';
+    }
   }
 }
 
