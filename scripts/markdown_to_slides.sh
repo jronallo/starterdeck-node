@@ -26,7 +26,7 @@ pandoc --template templates/handouts.html --section-divs --html5 slides/handouts
 
 
 # Create a single page version of the slides. Great for reading through all of your notes.
-pandoc --include-after-body=templates/include-after-body-fullpage.html --standalone --self-contained --section-divs slides/slides.md > slides/fullpage.html
+pandoc --include-after-body=templates/include-after-body-singlepage.html --standalone --self-contained --section-divs slides/slides.md > slides/singlepage.html
 
 
 # Clean up temp files

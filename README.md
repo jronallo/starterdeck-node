@@ -18,7 +18,7 @@ nodemon app.js
 
 Visit <http://localhost:3003/theindexpage.html>
 
-## Ruby
+## Ruby: Watch and Build the Slides
 
 ```
 bundle
@@ -33,5 +33,6 @@ The only file you must edit is `slides/slides.md`. Take a look at that file for 
 
 - Deploy barebones version to heroku
 - Link to original starterdeck and presentation this code was abstracted from
-
+- Improve readme based on original starterdeck readme
+- Write script to keep DZSlides template and slides/shells/onstage.html updated
 
