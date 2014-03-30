@@ -14,9 +14,10 @@ The slides are self-contained, meaning that all images, CSS, JavaScript, videos,
 
 ## About
 
-You can read more about this approach to creating slideshows here:
+You can read more about this approach to creating slideshows here: <http://jronallo.github.io/blog/html-and-pdf-slideshows-with-dzslides/>
 
-<http://jronallo.github.io/blog/html-and-pdf-slideshows-with-dzslides/>
+Based on the [original starterdeck](https://github.com/jronallo/starterdeck) and a [presentation for Code4Lib 2014 on WebSockets](http://ronallo.com/presentations/code4lib-2014-websockets/).
+
 
 ## Requirements
 
@@ -86,6 +87,5 @@ Included in assets/starterdeck.js is some JavaScript to toggle notes off and on 
 ## TODO
 
 - Deploy barebones version to heroku
-- Link to original starterdeck and presentation this code was abstracted from
-- Write script to keep DZSlides template and slides/shells/onstage.html updated
 - Instructions for deploying to Heroku
+- Write script to keep DZSlides template and slides/shells/onstage.html updated
