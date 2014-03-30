@@ -89,3 +89,11 @@ Included in assets/starterdeck.js is some JavaScript to toggle notes off and on 
 - Deploy barebones version to heroku
 - Instructions for deploying to Heroku
 - Write script to keep DZSlides template and slides/shells/onstage.html updated
+
+## License
+
+See MIT-LICENSE
+
+## Author
+
+This is made out of many tools others have created, but this arrangement of the tools was done by Jason Ronallo. If you use starterdeck-node it would be nice, though not required, to give a link back to the original repository or <http://ronallo.com> within your slide deck.
