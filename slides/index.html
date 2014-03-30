@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>Socket.io Test</title>
+  <script src="/socket.io/socket.io.js"></script>
+<script>
+  var host = location.protocol + '//' + location.host;
+  var socket = io.connect(host);
+  socket.emit('subscribe', {room: 'all'});
+  socket.emit('subscribe', {room: 'room'});
+
+  socket.on('update', function(data){
+    console.log(data);
+  });
+
+  // done on initial connection
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+
+</script>
+</head>
+<body>
+  <h1>Presentation Materials</h1>
+  <p><a href="/slides">Presenation Slides</a></p>
+  <p><a href="/handouts">Audience notes/handouts</a></p>
+</body>
+</html>
+

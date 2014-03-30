@@ -1,0 +1,13 @@
+{
+  "name": "websocket-presentation",
+  "description": "A node app, slides, and audience participation page",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "0.10.15"
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "socket.io": "0.9.16"
+  }
+}

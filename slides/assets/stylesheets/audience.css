@@ -1,0 +1,63 @@
+.hidden {
+	display: none;
+}
+
+.submit_message {
+	display: none;
+}
+
+section {
+  display: none;
+  border: 1px solid black;
+  padding: 30px;
+  /*background-color: lightGray;*/
+  position: relative;
+}
+
+section.current {
+	background-color: white;
+}
+
+div.slide_number div {
+	float: right;
+}
+
+div.slide_number {
+  color: #ccc;
+  height: 1em;
+}
+
+div.footerfix {
+	min-height: 2000px;
+}
+footer {
+	height: 40px;
+	padding: 10px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: #222;
+	color: white;
+}
+
+footer label {
+	display: inline;
+	color: white;
+}
+
+@media only screen and (max-width: 40em) {
+  section {
+    padding: 15px;
+  }
+  footer {
+  	height: 60px;
+  }
+  .auto-advance {
+  	display:block;
+  	padding-top: 10px;
+  }
+}
+
+#websocket-graphic-2, #websocket-graphic-2 h1 {
+  font-family: 'Comic Sans MS';
+}
