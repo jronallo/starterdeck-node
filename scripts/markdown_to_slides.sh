@@ -26,5 +26,3 @@ pandoc --include-after-body=templates/include-after-body-singlepage.html --stand
 
 # Clean up temp files
 rm slides/slides-temp.html
-rm slides/slides-temp-nonselfcontained.html
-# rm slides/handouts-temp.html
