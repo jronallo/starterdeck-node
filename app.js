@@ -49,7 +49,7 @@ app.post('/message/:room', function(req, res){
   res.send(200);
 });
 
-app.get('/theindexpage.html', function(req, res){
+app.get('/theindexpage', function(req, res){
   fs.readFile(__dirname + '/slides/index.html',
   function (err, data) {
     if (err) {
