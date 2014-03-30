@@ -10,14 +10,6 @@ When the node server is running the HTML slides and audience handout are synced 
 
 When guard is running the derivatives are automatically built when something changes. Browser pages are also reloaded using livereload.
 
-## Node: WebSocket Syncing
-
-```
-nodemon app.js
-```
-
-Visit <http://localhost:3003/theindexpage.html>
-
 ## Ruby: Watch and Build the Slides
 
 ```
@@ -28,6 +20,18 @@ bundle exec guard
 ## Editing the Slides
 
 The only file you must edit is `slides/slides.md`. Take a look at that file for how to include speaker notes and audience handout notes.
+
+
+## Node: WebSocket Syncing
+
+Optionally the slides and audience handout page can be synced.
+
+```
+nodemon app.js
+```
+
+Visit <http://localhost:3003/theindexpage.html>
+
 
 ## TODO
 
