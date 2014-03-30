@@ -20,6 +20,10 @@ Slides: <https://ronallo.com/presentations/>
 
 ![](slides/assets/images/internet-archive-600x.png)\ 
 
+<div role="note" class="note">
+  This is an example of adding an image to both the slides and the the handout.
+</div>
+
 <div class="handout">
   <img src="slides/assets/images/internet-archive-240x.png" alt="">
 </div>
