@@ -9,7 +9,7 @@ app.use(express.bodyParser());
 app.use(express.static(__dirname + '/slides/assets/'));
 
 // FIXME: how to best DRY up all of these routes
-
+// individual pages
 app.get('/slides', function(req, res){
   fs.readFile(__dirname + '/slides/slides.html',
   function (err, data) {
@@ -43,12 +43,6 @@ app.get('/onstage', function(req, res){
   });
 });
 
-app.post('/message/:room', function(req, res){
-  io.sockets.in('all').emit('update', req.body);
-  io.sockets.in(req.params.room).emit('update', req.body);
-  res.send(200);
-});
-
 app.get('/theindexpage', function(req, res){
   fs.readFile(__dirname + '/slides/index.html',
   function (err, data) {
@@ -69,6 +63,13 @@ app.get('/singlepage', function(req, res){
     res.setHeader('Content-Type', 'text/html');
     res.send(data);
   });
+});
+
+// listen for messages posted and broadcast to the room
+app.post('/message/:room', function(req, res){
+  io.sockets.in('all').emit('update', req.body);
+  io.sockets.in(req.params.room).emit('update', req.body);
+  res.send(200);
 });
 
 server.listen(process.env.PORT || 3003);
