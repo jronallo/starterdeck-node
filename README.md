@@ -89,6 +89,7 @@ Included in assets/starterdeck.js is some JavaScript to toggle notes off and on 
 - Deploy barebones version to heroku
 - Instructions for deploying to Heroku
 - Write script to keep DZSlides template and slides/shells/onstage.html updated
+- Include an example chat or audience questions slide
 
 ## License
 
