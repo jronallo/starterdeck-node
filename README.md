@@ -48,6 +48,8 @@ The only file you must edit is `slides/slides.md`. Take a look at that file for 
 
 Optionally the slides and audience handout page can be synced.
 
+TODO: Give directions on how to install node packages.
+
 ```
 nodemon app.js
 ```
