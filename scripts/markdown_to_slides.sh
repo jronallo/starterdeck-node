@@ -17,7 +17,7 @@ sed 's/<!-- insert before include-after-body-slides -->/<script src="\/socket.io
 ./scripts/slides_to_handouts.rb slides/slides-temp.html > slides/handouts.md
 
 # Use pandoc to convert the handouts.md file into a self-contained HTML file
-pandoc --template templates/handouts.html --section-divs --html5 slides/handouts.md > slides/handouts.html
+pandoc --template templates/handouts.html --section-divs -w html5 slides/handouts.md > slides/handouts.html
 
 
 # Create a single page version of the slides. Great for reading through all of your notes.
