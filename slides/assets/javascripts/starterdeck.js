@@ -1,17 +1,27 @@
 window.onkeypress = presentation_keypress_check;
 
 function presentation_keypress_check(aEvent){
-  if ( aEvent.keyCode == 110) {
+  var key = aEvent.keyCode || aEvent.charCode;
+  if ( key == 110) { // show speaker notes
     aEvent.preventDefault();
     var notes = document.getElementsByClassName('note');
     for (var i=0; i < notes.length; i++){
       notes[i].style.display = (notes[i].style.display == 'none' || !notes[i].style.display) ? 'block' : 'none';
     }
-  } else if ( aEvent.keyCode == 97) {
+  } else if ( key == 97) { // show handout text
     aEvent.preventDefault();
     var handouts = document.getElementsByClassName('handout');
     for (var i=0; i < handouts.length; i++){
       handouts[i].style.display = (handouts[i].style.display == 'none' || !handouts[i].style.display) ? 'block' : 'none';
+    }
+  } else if ( key == 112) { // pause video
+    aEvent.preventDefault();
+    var selected = document.querySelectorAll('[aria-selected]')[0];
+    var video = document.getElementById(selected.id).getElementsByTagName('video')[0];
+    if(video.paused) {
+      video.play();
+    } else {
+      video.pause();
     }
   }
 }

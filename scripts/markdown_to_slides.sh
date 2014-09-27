@@ -4,11 +4,21 @@
 
 # Converts a markdown file into a DZslides presentation. Pandoc must be installed. Must be run from root like scripts/markdown_to_slides.sh
 
-# First create the HTML version of the slides that are self-contained.
-pandoc -w dzslides --include-after-body=templates/include-after-body-slides.html --standalone --self-contained slides/slides.md > slides/slides-temp.html
+# First create the HTML version of the slides that use external assets. This allows
+# the page to be reloaded much faster.
+pandoc -w dzslides --include-after-body=templates/include-after-body-slides.html --standalone slides/slides.md > slides/slides-external-temp.html
 
-# The line above could be changed to output to presentation-tmp.html and this line uncommented to use sed to insert some
-# other text. Sometimes this is necessary when a script can't be turned into a data URI by pandoc.
+# Insert the external assets we need
+sed 's/<!-- insert before include-after-body-slides -->/<script src="\/socket.io\/socket.io.js" type="text\/javascript"><\/script><script src="http:\/\/localhost:35729\/livereload.js"><\/script>/' slides/slides-external-temp.html > slides/slides-external-temp2.html
+
+# For the external version we also need to change some paths to work correctly with Node.
+sed 's/slides\/assets//' slides/slides-external-temp2.html > slides/slides-external.html
+
+
+# Next create the HTML version of the slides that are self-contained.
+pandoc -w dzslides --include-after-body=templates/include-after-body-slides.html --standalone --self-contained slides/slides.md > slides/slides-temp.html
+# We need these scripts included separately so they're not included as data blobs otherwise
+# the external synching wont' work.
 sed 's/<!-- insert before include-after-body-slides -->/<script src="\/socket.io\/socket.io.js" type="text\/javascript"><\/script><script src="http:\/\/localhost:35729\/livereload.js"><\/script>/' slides/slides-temp.html > slides/slides.html
 
 
@@ -26,3 +36,7 @@ pandoc --include-after-body=templates/include-after-body-singlepage.html --stand
 
 # Clean up temp files
 rm slides/slides-temp.html
+rm slides/slides-external-temp.html
+rm slides/slides-external-temp2.html
+
+echo -ne "Built! `date`"

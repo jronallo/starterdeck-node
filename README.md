@@ -35,9 +35,15 @@ $ git archive master | tar -x -C ~/project/new_presentation
 
 ## Ruby: Watch and Build the Slides
 
+Since building the self-contained version of the site can be slow when you're wanting to check for things like CSS changes there are two groups. The fast group will run livereload and sass building. The build group will create all of the various derivatives.
+
+```shell
+bundle exec guard -g fast
 ```
-bundle
-bundle exec guard
+
+In a separate console run:
+```shell
+bundle exec guard -g build
 ```
 
 ## Editing the Slides
@@ -54,7 +60,7 @@ TODO: Give directions on how to install node packages.
 nodemon app.js
 ```
 
-Visit <http://localhost:3003/theindexpage.html>
+Visit <http://localhost:3003/theindexpage>
 
 ## Using the Latest DZSlides Template
 
@@ -82,7 +88,7 @@ This project uses Sass and provides some mixins for some common slide styles. Yo
 
 Included in assets/starterdeck.js is some JavaScript to toggle notes off and on using the "n" key.
 
-## Exporting a PDF
+## Exporting a PDFonstage#slides
 
 `scripts/dzslides2pdf.rb http://localhost:3003 slides`
 
