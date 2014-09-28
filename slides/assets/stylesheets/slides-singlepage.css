@@ -25,6 +25,6 @@ div.handout:before {
 	content: 'Handout: ';
 }
 
-img {
+img, video {
 	width: 100%;
 }
