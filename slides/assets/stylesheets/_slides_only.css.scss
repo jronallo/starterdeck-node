@@ -1,0 +1,26 @@
+div[role=note], div.handout {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  color: white;
+  background-color: gray;
+  opacity: 0.85;
+  padding: 20px;
+  font-size: 12px;
+  width: 100%;
+}
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: #0000EE;
+}
+
+#progress-bar {
+    height: 5px;
+    background: #AAA;
+}

@@ -1,0 +1,34 @@
+@import "starterdeck.css.scss";
+@import "custom.css.scss";
+div[role=note], div.handout {
+  clear: both;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+	font-weight: 300;
+}
+
+div[role=note] {
+  background-color: #ccc;
+  padding: 10px;
+}
+
+div[role=note]:before {
+	content: 'Note: '
+}
+
+div.handout {
+	background-color: #ddd;
+	padding: 10px;
+}
+
+div.handout:before {
+	content: 'Handout: ';
+}
+
+img, video {
+	max-width: 100%;
+}

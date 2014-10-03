@@ -1,23 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900,500);
 
-div[role=note], div.handout {
-  display: none;
-  position: absolute;
-  bottom: 0;
-  color: white;
-  background-color: gray;
-  opacity: 0.85;
-  padding: 20px;
-  font-size: 12px;
-  width: 100%;
-}
-a {
-  text-decoration: none;
-}
-a:visited {
-  color: #0000EE;
-}
-
 td {
   border-left: 0;
   border-right: 0;
@@ -36,20 +18,10 @@ h1, h2 {
   font-weight: 300;
 }
 
-img {
-  max-width: 100%;
-}
-
 table {
   margin-left: auto;
   margin-right: auto;
 }
-
-#progress-bar {
-    height: 5px;
-    background: #AAA;
-}
-
 
 // mixins
 
