@@ -46,9 +46,11 @@ In a separate console run:
 bundle exec guard -g build
 ```
 
+All files are built into static files and placed into the /public directory. This allows for either deploying the static files to any Web server or, if you want audience handout syncing, deploy the node application behind something like Passenger where the static assets will still be served up directly by nginx.
+
 ## Editing the Slides
 
-The only file you must edit is `slides/slides.md`. Take a look at that file for how to include speaker notes and audience handout notes.
+The only file you must edit is `slides/slides.md`. Take a look at that file for how to include speaker notes and audience handout notes. You'll also note that all assets need the correct path to the public folder.
 
 ## Node: WebSocket Syncing
 
@@ -56,8 +58,16 @@ Optionally the slides and audience handout page can be synced.
 
 TODO: Give directions on how to install node packages.
 
+### nodemon
+
 ```
 nodemon app.js
+```
+
+### Passenger standalone
+
+```
+passenger start -p 3003
 ```
 
 Visit <http://localhost:3003/theindexpage>
@@ -74,15 +84,15 @@ See the addition to the first comment here for more information on this: <https:
 
 Edit assets/stylesheets/_custom.css.scss using the SCSS syntax.
 
-Edit assets/javascripts/custom.js to add custom JavaScript.
+Edit public/assets/javascripts/custom.js to add custom JavaScript.
 
 ## Sass
 
-This project uses Sass and provides some mixins for some common slide styles. You can see them in assets/stylesheets/_starterdeck.css.scss
+This project uses Sass and provides some mixins for some common slide styles. You can see them in slides/assets/stylesheets/_starterdeck.css.scss
 
 ## Presenter Mode
 
-<http://localhost:3003/onstage#/slides>
+<http://localhost:3003/shells/onstage#/slides>
 
 ## Speaker notes
 

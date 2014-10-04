@@ -8,7 +8,7 @@ require 'pry'
 slides_path = ARGV[0]
 doc = Nokogiri::HTML(File.open(slides_path))
 
-File.open('slides/handouts.md', 'w') do |fh|
+File.open('tmp/handouts.md', 'w') do |fh|
   doc.xpath('//section').each do |section|
     id = section.attr(:id)
     h1 = section.xpath('h1').text()

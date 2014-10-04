@@ -1,1 +1,4 @@
 .sass-cache
+tmp/always_restart.txt
+tmp/pids
+log/*

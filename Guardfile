@@ -2,21 +2,21 @@ group :fast do
   guard 'livereload', grace_period: 0.5, apply_css_live: false do
     watch("slides/slides.html")
     watch("slides/slides-external.html")
-    watch("slides/assets/stylesheets/slides.css")
+    watch("public/assets/stylesheets/slides.css")
   end
 
-  guard 'sass', :input => 'slides/assets/stylesheets'
+  guard 'sass', :input => 'slides/assets/stylesheets',
+    :output => 'public/assets/stylesheets'
 end
 
 group :build do
   guard :shell do
     # If any of these change run the script to build slides/slides.html
-    watch('slides/assets/stylesheets/slides.css')          {
-      `touch slides/slides.html`
+    watch('public/assets/stylesheets/slides.css')          {
       puts `./scripts/markdown_to_slides.sh`
     }
-    watch('slides/assets/stylesheets/slides-singlepage.css') {puts `./scripts/markdown_to_slides.sh`}
-    watch(%r{slides/assets/javascripts/.*.js})             {puts `./scripts/markdown_to_slides.sh`}
+    watch('public/assets/stylesheets/slides-singlepage.css') {puts `./scripts/markdown_to_slides.sh`}
+    watch(%r{public/assets/javascripts/.*.js})             {puts `./scripts/markdown_to_slides.sh`}
     watch('scripts/markdown_to_slides.sh')          {puts `./scripts/markdown_to_slides.sh`}
     watch('scripts/slides_to_handouts.rb') {puts `./scripts/markdown_to_slides.sh`}
 
@@ -24,7 +24,7 @@ group :build do
 
     watch('slides/slides.md')                               {puts `./scripts/markdown_to_slides.sh`}
 
-    watch(%r{slides/assets/images/*\.(jpg|png)})           {puts `./scripts/markdown_to_slides.sh`}
+    watch(%r{public/assets/images/*\.(jpg|png)})           {puts `./scripts/markdown_to_slides.sh`}
 
     # watch('slides/slides-temp-nonselfcontained.html') {puts `./scripts/slides_to_handouts.rb`}
 
