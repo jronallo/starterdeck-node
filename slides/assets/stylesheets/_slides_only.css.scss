@@ -24,3 +24,6 @@ a:visited {
     height: 5px;
     background: #AAA;
 }
+#takahashi {
+  @include takahashi;
+}
