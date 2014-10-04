@@ -1,7 +1,7 @@
 group :fast do
   guard 'livereload', grace_period: 0.5, apply_css_live: false do
-    watch("slides/slides.html")
-    watch("slides/slides-external.html")
+    watch("public/slides/index.html")
+    watch("public/slides-ex/index.html")
     watch("public/assets/stylesheets/slides.css")
   end
 
@@ -26,8 +26,5 @@ group :build do
 
     watch(%r{public/assets/images/*\.(jpg|png)})           {puts `./scripts/markdown_to_slides.sh`}
 
-    # watch('slides/slides-temp-nonselfcontained.html') {puts `./scripts/slides_to_handouts.rb`}
-
-    # watch('slides/slides.html') {`cp slides/slides.html ../prelim_inventory/source/presentations/DIRECTORY_OF_PRESENTATION/slides.html; echo "Moved presentation to blog!"`}
   end
 end
