@@ -1,4 +1,12 @@
 .sass-cache
+
+# various temporary files created when converting Markdown to slides
+tmp/handouts.md
+tmp/slides-external-temp.html
+tmp/slides-external-temp2.html
+tmp/slides-temp.html
+tmp/slides-temp2.html
+
 tmp/always_restart.txt
 tmp/pids
 log/*
