@@ -52,6 +52,8 @@ All files are built into static files and placed into the /public directory. Thi
 
 The only file you must edit is `slides/slides.md`. Take a look at that file for how to include speaker notes and audience handout notes. You'll also note that all assets need the correct path to the public folder.
 
+Look in tmp/slides-headings.txt for a numbered list of all the slides. This can be useful for getting an outline to consider how to order the slides. It can also be useful for knowing the number needed to jump directly to a particular slide in a browser.
+
 ## Node: WebSocket Syncing
 
 Optionally the slides and audience handout page can be synced.

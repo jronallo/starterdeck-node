@@ -12,19 +12,22 @@ end
 group :build do
   guard :shell do
     # If any of these change run the script to build slides/slides.html
-    watch('public/assets/stylesheets/slides.css')          {
+    watch('public/assets/stylesheets/slides.css') {
       puts `./scripts/markdown_to_slides.sh`
     }
-    watch('public/assets/stylesheets/slides-singlepage.css') {puts `./scripts/markdown_to_slides.sh`}
-    watch(%r{public/assets/javascripts/.*.js})             {puts `./scripts/markdown_to_slides.sh`}
-    watch('scripts/markdown_to_slides.sh')          {puts `./scripts/markdown_to_slides.sh`}
-    watch('scripts/slides_to_handouts.rb') {puts `./scripts/markdown_to_slides.sh`}
+    watch('public/assets/stylesheets/slides-singlepage.css') { puts `./scripts/markdown_to_slides.sh`}
+    watch(%r{public/assets/javascripts/.*.js}) { puts `./scripts/markdown_to_slides.sh`}
+    watch('scripts/markdown_to_slides.sh') { puts `./scripts/markdown_to_slides.sh`}
+    watch('scripts/slides_to_handouts.rb') { puts `./scripts/markdown_to_slides.sh`}
 
-    watch(%r{templates/.*})                                {puts `./scripts/markdown_to_slides.sh`}
+    watch(%r{templates/.*}) { puts `./scripts/markdown_to_slides.sh` }
 
-    watch('slides/slides.md')                               {puts `./scripts/markdown_to_slides.sh`}
+    watch('slides/slides.md') {
+      `at slides/slides.md | grep "^# " | sed 's/# //g'  | nl  > tmp/slides-headings.txt`
+      puts `./scripts/markdown_to_slides.sh`
+    }
 
-    watch(%r{public/assets/images/*\.(jpg|png)})           {puts `./scripts/markdown_to_slides.sh`}
+    watch(%r{public/assets/images/*\.(jpg|png)}) { puts `./scripts/markdown_to_slides.sh` }
 
   end
 end
